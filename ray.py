@@ -3,7 +3,7 @@ import numpy as np
 
 class ray:
 	'''
-	Class to store ray trace data including x, y coordinates and indices
+	Class to store ray trace data including x, y, z coordinates and indices
 	'''
 	def __init__(self):
 		# self.__maxpoints = maxpoints
