@@ -132,23 +132,22 @@ class ray:
 			self.__index.pop()
 			self.cur -= 1
 
-	def toy(self, n=10):
-		'''
-		Make a toy instance with random data
-		'''
-		newray = ray()
-		newray.unlock()
-		rnd = np.random.rand
-		rndi = np.random.randint
-		for (x, y, z, i) in zip(rnd(n), rnd(n), rnd(n), rndi(n, size=n)):
-			newray.addPoint(x, y, z, i)
-		newray.lock()
-		return newray
+def toy(n=10):
+	'''
+	Make a toy instance of ray() with random data
+	'''
+	newray = ray()
+	newray.unlock()
+	rnd = np.random.rand
+	rndi = np.random.randint
+	for (x, y, z, i) in zip(rnd(n), rnd(n), rnd(n), rndi(n, size=n)):
+		newray.addPoint(x, y, z, i)
+	newray.lock()
+	return newray
 
 
 if __name__ == '__main__':
-	a = ray()
-	a = a.toy()
+	a = toy()
 	# print a.getAll()
 	# print a.getIncidentAngle()
 	print a
